@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fawzi UI/UX Portfolio</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/tugas3.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-white py-2">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="https://ui-avatars.com/api/?name=Fawzi&background=ff7a00&color=fff&size=32" alt="Logo" style="height:32px;">
+        <span>Wahyu Web Developer</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-orange px-4" href="#" target="_blank">Download CV</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-5" style="margin-top:80px;">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Column: Text -->
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="mb-2 hero-subtitle">Hi! I am</div>
+          <div class="mb-1" style="font-size:1.3rem; font-weight:600;">
+            <span style="color:var(--main-orange);">Wahyu Cahyo Vebrianto</span>
+          </div>
+          <div class="hero-title mb-3">
+            Web<br>Developer
+          </div>
+          <p class="mb-4 hero-subtitle">
+            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus nulla in. Aliquet donec morbi convallis pretium. Turpis tempor pharetra.
+          </p>
+          <a href="#" class="btn btn-orange px-4 py-2">Hire Me</a>
+        </div>
+        <!-- Right Column: Image + Social -->
+        <div class="col-lg-6 text-center">
+          <img src="image/profil.png" alt="Profile" class="profile-img mb-3">
+          <div class="social-icons mt-2">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+<section id="about" class="bg-white py-5 mt-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Profile Image -->
+      <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+        <img src="image/profil.png" alt="Profile" 
+          class="profile-img"
+          style="width: 260px; height: 260px; object-fit: cover; border-radius: 50%; border: 2px solid #e5e5e5;">
+      </div>
+      <!-- About Content -->
+      <div class="col-lg-7">
+        <h2 class="fw-bold mb-3" style="font-size:2.2rem;">About Me</h2>
+        <p class="mb-4" style="color:#444; max-width: 520px;">
+          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus nulla in. Aliquet donec morbi convallis pretium. Turpis tempor pharetra.
+        </p>
+        <!-- Skill Bars -->
+        <div class="mb-3">
+          <div class="mb-1 fw-semibold">UX</div>
+          <div class="progress" style="height: 10px; border-radius: 6px; background: #f2f2f2;">
+            <div class="progress-bar" role="progressbar" style="width: 90%; background: #ff7a00; border-radius: 6px;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="mb-1 fw-semibold">Website Design</div>
+          <div class="progress" style="height: 10px; border-radius: 6px; background: #f2f2f2;">
+            <div class="progress-bar" role="progressbar" style="width: 85%; background: #ff7a00; border-radius: 6px;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="mb-1 fw-semibold">App Design</div>
+          <div class="progress" style="height: 10px; border-radius: 6px; background: #f2f2f2;">
+            <div class="progress-bar" role="progressbar" style="width: 80%; background: #ff7a00; border-radius: 6px;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-1 fw-semibold">Graphic Design</div>
+          <div class="progress" style="height: 10px; border-radius: 6px; background: #f2f2f2;">
+            <div class="progress-bar" role="progressbar" style="width: 75%; background: #ff7a00; border-radius: 6px;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Services Section -->
+<section id="services" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-2" style="font-size:2rem;">Services</h2>
+    <p class="text-center mb-4" style="color:#444;">
+      Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus nulla in. Aliquet donec morbi convallis pretium.
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center border-0 shadow-sm">
+          <div class="card-body">
+            <div class="mb-3" style="font-size:2rem; color:#ff7a00;">
+              <i class="bi bi-palette"></i>
+            </div>
+            <h5 class="fw-bold mb-2">UI/UX</h5>
+            <p class="text-muted mb-0" style="font-size:0.97rem;">Lorem ipsum dolor sit amet consectetur. Diam erat diam non sem tincidunt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center border-0 shadow-sm">
+          <div class="card-body">
+            <div class="mb-3" style="font-size:2rem; color:#ff7a00;">
+              <i class="bi bi-window"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Web Design</h5>
+            <p class="text-muted mb-0" style="font-size:0.97rem;">Lorem ipsum dolor sit amet consectetur. Diam erat diam non sem tincidunt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center border-0 shadow-sm">
+          <div class="card-body">
+            <div class="mb-3" style="font-size:2rem; color:#ff7a00;">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h5 class="fw-bold mb-2">App Design</h5>
+            <p class="text-muted mb-0" style="font-size:0.97rem;">Lorem ipsum dolor sit amet consectetur. Diam erat diam non sem tincidunt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center border-0 shadow-sm">
+          <div class="card-body">
+            <div class="mb-3" style="font-size:2rem; color:#ff7a00;">
+              <i class="bi bi-brush"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Graphic Design</h5>
+            <p class="text-muted mb-0" style="font-size:0.97rem;">Lorem ipsum dolor sit amet consectetur. Diam erat diam non sem tincidunt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- My Projects Section -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-2" style="font-size:2rem;">My Projects</h2>
+    <p class="text-center mb-4" style="color:#444;">
+      Lorem ipsum dolor sit amet consectetur. Mollis erat dui aliquam mauris est risus lectus. Phasellus consequat urna facilisi.
+    </p>
+    <!-- Filter Buttons -->
+    <div class="d-flex justify-content-center mb-4 flex-wrap gap-2">
+      <button class="btn btn-light fw-semibold px-3 py-1 border" style="border-radius: 20px;">All</button>
+      <button class="btn btn-orange fw-semibold px-3 py-1" style="border-radius: 20px;">Web Design</button>
+      <button class="btn btn-light fw-semibold px-3 py-1 border" style="border-radius: 20px;">App Design</button>
+      <button class="btn btn-light fw-semibold px-3 py-1 border" style="border-radius: 20px;">Graphic Design</button>
+      <button class="btn btn-light fw-semibold px-3 py-1 border" style="border-radius: 20px;">UI/UX</button>
+    </div>
+    <!-- Project Cards -->
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://via.placeholder.com/400x300/ffe5d0/333?text=Landing+Page+1" class="card-img-top" alt="Project 1" style="border-radius: 16px 16px 0 0;">
+          <div class="card-body">
+            <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+            <h5 class="fw-bold mb-1">AirCalling Landing Page Design</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://via.placeholder.com/400x300/ffe5d0/333?text=Landing+Page+2" class="card-img-top" alt="Project 2" style="border-radius: 16px 16px 0 0;">
+          <div class="card-body">
+            <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+            <h5 class="fw-bold mb-1">Business Landing Page Design</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="https://via.placeholder.com/400x300/ffe5d0/333?text=Landing+Page+3" class="card-img-top" alt="Project 3" style="border-radius: 16px 16px 0 0;">
+          <div class="card-body">
+            <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+            <h5 class="fw-bold mb-1">Ecom Web Page Design</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA Section -->
+<section id="contact" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-2" style="font-size:2rem;">Lets Design Together</h2>
+    <p class="mb-4" style="color:#444;">
+      Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus nulla in. Aliquet donec morbi convallis pretium.
+    </p>
+    <form class="row justify-content-center g-2">
+      <div class="col-md-4">
+        <input type="email" class="form-control form-control-lg" placeholder="Enter Your Email" required>
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-orange btn-lg w-100">Contact Me</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white pt-4 pb-2 mt-5 border-top">
+  <div class="container text-center">
+    <a class="navbar-brand d-inline-flex align-items-center mb-2" href="#">
+      <img src="https://ui-avatars.com/api/?name=Fawzi&background=ff7a00&color=fff&size=32" alt="Logo" style="height:32px;">
+      <span style="font-weight:bold; color:#ff7a00; margin-left:8px;">Wahyu Web Developer</span>
+    </a>
+    <nav class="mb-2">
+      <a href="#" class="mx-2 text-dark text-decoration-none">Home</a>
+      <a href="#" class="mx-2 text-dark text-decoration-none">About Me</a>
+      <a href="#" class="mx-2 text-dark text-decoration-none">Services</a>
+      <a href="#" class="mx-2 text-dark text-decoration-none">Projects</a>
+      <a href="#" class="mx-2 text-dark text-decoration-none">Testimonials</a>
+      <a href="#" class="mx-2 text-dark text-decoration-none">Contact</a>
+    </nav>
+    <div class="mb-2">
+      <a href="#" class="mx-1 text-dark fs-5"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="mx-1 text-dark fs-5"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="mx-1 text-dark fs-5"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="mx-1 text-dark fs-5"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <div class="text-muted" style="font-size:0.97rem;">
+      © 2025 <span style="color:#ff7a00;">Wahyu Cahyo Vebrianto</span> All Rights Reserved., Inc.
+    </div>
+  </div>
+</footer>
+
+<!-- Custom CSS for orange and badge -->
+<style>
+  .btn-orange {
+    background: #ff7a00;
+    color: #fff;
+    border: none;
+  }
+  .btn-orange:hover {
+    background: #e86d00;
+    color: #fff;
+  }
+  .text-orange {
+    color: #ff7a00 !important;
+  }
+</style>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    <!-- content -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

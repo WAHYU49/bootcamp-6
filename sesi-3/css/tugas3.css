@@ -1,0 +1,105 @@
+:root {
+	--main-orange: #ff7a00;
+}
+.navbar {
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.navbar-brand span {
+	font-weight: bold;
+	color: var(--main-orange);
+	margin-left: 8px;
+	letter-spacing: 1px;
+}
+.btn-orange {
+	background: var(--main-orange);
+	color: #fff;
+	border: none;
+}
+.btn-orange:hover {
+	background: #e86d00;
+	color: #fff;
+}
+.profile-img {
+	width: 320px;
+	height: 320px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 4px solid #eee;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+	background: #fff;
+	display: block;
+	margin: 0 auto;
+}
+.hero-title {
+	font-size: 2.8rem;
+	font-weight: 800;
+	line-height: 1.1;
+}
+.hero-subtitle {
+	font-size: 1.1rem;
+	color: #555;
+}
+.social-icons a {
+	color: #222;
+	font-size: 1.5rem;
+	margin-right: 18px;
+	transition: color 0.2s;
+}
+.social-icons a:hover {
+	color: var(--main-orange);
+}
+@media (max-width: 991.98px) {
+	.profile-img {
+		width: 220px;
+		height: 220px;
+	}
+	.hero-title {
+		font-size: 2rem;
+	}
+}
+/* About Me Section */
+#about .profile-img {
+	width: 260px;
+	height: 260px;
+	border: 2px solid #e5e5e5;
+}
+#about h2 {
+	font-size: 2.2rem;
+}
+#about p {
+	color: #444;
+	max-width: 520px;
+}
+#about .progress {
+	height: 10px;
+	border-radius: 6px;
+	background: #f2f2f2;
+}
+#about .progress-bar {
+	background: var(--main-orange);
+	border-radius: 6px;
+}
+/* Services & Projects Section */
+.text-orange {
+	color: var(--main-orange) !important;
+}
+.btn-orange {
+	background: var(--main-orange);
+	color: #fff;
+	border: none;
+}
+.btn-orange:hover {
+	background: #e86d00;
+	color: #fff;
+}
+.badge.text-orange {
+	color: var(--main-orange) !important;
+	border: 1px solid var(--main-orange);
+}
+/* Contact & Footer */
+footer .navbar-brand span {
+	color: var(--main-orange);
+}
+footer .text-orange {
+	color: var(--main-orange) !important;
+}
