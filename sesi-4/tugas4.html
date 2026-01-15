@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wahyu Portfolio</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/tugas4.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-white py-2">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY7tRPyzAQ3T0wzVWCd0GVxTSfU79du2xz0A&s" alt="Logo" style="height:32px;">
+        <span>Wahyu Web Developer</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-orange px-4" href="#" target="_blank">Download CV</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <section class="pt-5" style="margin-top:80px;">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Column: Text -->
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="mb-2 hero-subtitle">Hi! I am</div>
+          <div class="mb-1" style="font-size:1.3rem; font-weight:600;">
+            <span style="color:var(--main-orange);">Wahyu Cahyo Vebrianto</span>
+          </div>
+          <div class="hero-title mb-3" style="font-size:2.8rem; font-weight:700; line-height:1.2;">
+            Website<br>
+            Programmer
+          </div>
+          <p class="mb-4 hero-subtitle">
+            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus nulla in. Aliquet donec morbi convallis pretium. Turpis tempor pharetra.
+          </p>
+          <!-- Button trigger modal -->
+          <a href="#" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#HireMeModal">
+            Hire Me
+          </a>
+          <!-- Modal -->
+          <div class="modal fade" id="HireMeModal" tabindex="-1" aria-labelledby="HireMeModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="HireMeModalLabel">Hire Me</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="name" placeholder="Your Name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="email" placeholder="Your Email">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message" class="form-label">Message</label>
+                      <textarea class="form-control" id="message" rows="3" placeholder="Your Message"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-orange">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right Column: Image + Social -->
+        <div class="col-lg-6 text-center">
+          <img src="image/profil.png" alt="Profile" class="profile-img mb-3">
+          <div class="social-icons mt-2">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.instagram.com/wahyu_c_vebrian/" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+<section id="about" class="bg-white py-5 mt-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Profile Image -->
+      <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+        <img src="image/profil.png" alt="Profile" 
+          class="profile-img"
+          style="width: 260px; height: 260px; object-fit: cover; border-radius: 50%; border: 2px solid #e5e5e5;">
+      </div>
+      <!-- About Content -->
+      <div class="col-lg-7">
+        <h2 class="fw-bold mb-3" style="font: size 65px; font-weight: 600;">About Me</h2>
+        <p class="mb-4" style="color:#444; max-width: 520px;">
+          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus nulla in. Aliquet donec morbi convallis pretium. Turpis tempor pharetra.
+        </p>
+        <!-- Skill Bars -->
+        <div class="mb-4">
+          <h4 style="font-size: 24px; font-weight: 600;">HTML</h4>
+          <div class="progress" style="height: 10px; border-radius: 6px; background: #f2f2f2;">
+          <div class="progress-bar" role="progressbar" style="width: 90%; background: #ff7a00; border-radius: 6px;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="mb-4">
+          <h4 style="font-size: 24px; font-weight: 600;">CSS</h4>
+          <div class="progress" style="height: 10px; border-radius: 6px; background: #f2f2f2;">
+          <div class="progress-bar" role="progressbar" style="width: 85%; background: #ff7a00; border-radius: 6px;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="mb-4">
+          <h4 style="font-size: 24px; font-weight: 600;">JavaScript</h4>
+          <div class="progress" style="height: 10px; border-radius: 6px; background: #f2f2f2;">
+          <div class="progress-bar" role="progressbar" style="width: 80%; background: #ff7a00; border-radius: 6px;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="mb-4">
+          <h4 style="font-size: 24px; font-weight: 600;">React</h4>
+          <div class="progress" style="height: 10px; border-radius: 6px; background: #f2f2f2;">
+          <div class="progress-bar" role="progressbar" style="width: 75%; background: #ff7a00; border-radius: 6px;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Services Section -->
+<section id="services" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-2" style="font-size:2rem;">Services</h2>
+    <p class="text-center mb-4" style="color:#444;">
+      Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus nulla in. Aliquet donec morbi convallis pretium.
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center border-0 shadow-sm" style="background-color: #F8F8F8;">
+          <div class="card-body">
+            <div class="mb-3" style="font-size:2rem; color:#ff7a00;">
+              <i class="bi bi-palette"></i>
+            </div>
+            <h5 class="fw-bold mb-2">UI/UX</h5>
+            <p class="text-muted mb-0" style="font-size:0.97rem;">Lorem ipsum dolor sit amet consectetur. Diam erat diam non sem tincidunt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center border-0 shadow-sm" style="background-color: #F8F8F8;">
+          <div class="card-body">
+            <div class="mb-3" style="font-size:2rem; color:#ff7a00;">
+              <i class="bi bi-window"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Web Design</h5>
+            <p class="text-muted mb-0" style="font-size:0.97rem;">Lorem ipsum dolor sit amet consectetur. Diam erat diam non sem tincidunt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center border-0 shadow-sm" style="background-color: #F8F8F8;">
+          <div class="card-body">
+            <div class="mb-3" style="font-size:2rem; color:#ff7a00;">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h5 class="fw-bold mb-2">App Design</h5>
+            <p class="text-muted mb-0" style="font-size:0.97rem;">Lorem ipsum dolor sit amet consectetur. Diam erat diam non sem tincidunt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center border-0 shadow-sm" style="background-color: #F8F8F8;">
+          <div class="card-body">
+            <div class="mb-3" style="font-size:2rem; color:#ff7a00;">
+              <i class="bi bi-brush"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Graphic Design</h5>
+            <p class="text-muted mb-0" style="font-size:0.97rem;">Lorem ipsum dolor sit amet consectetur. Diam erat diam non sem tincidunt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- My Projects Section -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-2" style="font-size:2rem;">My Projects</h2>
+    <p class="text-center mb-4" style="color:#444;">
+      Lorem ipsum dolor sit amet consectetur. Mollis erat dui aliquam mauris est risus lectus. Phasellus consequat urna facilisi.
+    </p>
+    <div class="project-tabs">
+      <input type="radio" name="project-tab" id="tab-all" checked>
+      <input type="radio" name="project-tab" id="tab-web-design">
+      <input type="radio" name="project-tab" id="tab-app-design">
+      <input type="radio" name="project-tab" id="tab-graphic-design">
+      <input type="radio" name="project-tab" id="tab-ui-ux">
+      <div class="tab-buttons d-flex justify-content-center align-items-center mb-4 gap-2 filter-horizontal">
+        <label for="tab-all" class="tab-btn">All</label>
+        <label for="tab-web-design" class="tab-btn">Web Design</label>
+        <label for="tab-app-design" class="tab-btn">App Design</label>
+        <label for="tab-graphic-design" class="tab-btn">Graphic Design</label>
+        <label for="tab-ui-ux" class="tab-btn">UI/UX</label>
+      </div>
+      <div class="tab-content">
+        <div class="tab-panel" id="panel-all">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 1" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">AirCalling Landing Page Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 2" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">Business Landing Page Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 3" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">Ecom Web Page Design</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" id="panel-web-design">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="https://www.extensiv.com/hs-fs/hubfs/Skubana/Blog%20Pages/Imported_Blog_Media/Wishpond-4.png?width=1137&height=563&name=Wishpond-4.png" class="card-img-top" alt="Project 1" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">AirCalling Landing Page Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi9U1MHQpNSMOIzpl7QTyeA8G4aG2qhkTymg&s" class="card-img-top" alt="Project 2" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">Business Landing Page Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp247UjukP-1EVYbCdY29BJdBVsTOJgeOJ-Q&s" class="card-img-top" alt="Project 3" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">Ecom Web Page Design</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" id="panel-app-design">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 1" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">AirCalling Landing Page Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 2" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">Business Landing Page Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 3" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">Ecom Web Page Design</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" id="panel-graphic-design">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 1" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">AirCalling Landing Page Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 2" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">Business Landing Page Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 3" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">Ecom Web Page Design</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" id="panel-ui-ux">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 1" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">AirCalling Landing Page Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 2" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">Business Landing Page Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Project 3" style="border-radius: 16px 16px 0 0;">
+                <div class="card-body">
+                  <span class="badge bg-light text-orange mb-2" style="font-size:0.95rem; border-radius:12px; border:1px solid #ff7a00;">Web Design</span>
+                  <h5 class="fw-bold mb-1">Ecom Web Page Design</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Testimonials Section -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-2" style="font-size:2rem;">Testimonials</h2>
+    <p class="text-center mb-4" style="color:#444;">
+      Lorem ipsum dolor sit amet consectetur. Mollis erat dui aliquam mauris est risus lectus. Phasellus consequat urna facilisi.
+    </p>
+        <div class="col-12">
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card p-5" style="background-color: #F8F8F8; border: none; border-radius: 14px;">
+              <div class="d-lg-flex align-items-center gap-4">
+                <img src="image/profil.png" alt="Testimonial" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="flex-grow-1">
+                  <div class="mb-3" style="font-size: 18px; line-height: 1.6;">
+                    <span style="color: #FD6F00; font-size: 48px; font-weight: bold;">"</span>
+                    Lorem ipsum dolor sit amet consectetur. In enim cursus odio accumsan. Id leo urna velit neque mattis id tellus arcu condimentum. Augue dictum dolor elementum convallis dignissim malesuada commodo ultrices.
+                    <span style="color: #FD6F00; font-size: 48px; font-weight: bold;">"</span>
+                  </div>
+                  <h5 class="mb-1" style="font-size: 24px; font-weight: 600;">Name</h5>
+                  <p class="mb-0" style="font-size: 19px;">CEO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card p-5" style="background-color: #F8F8F8; border: none; border-radius: 14px;">
+              <div class="d-lg-flex align-items-center gap-4">
+                <img src="image/profil.png" alt="Testimonial" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="flex-grow-1">
+                  <div class="mb-3" style="font-size: 18px; line-height: 1.6;">
+                    <span style="color: #FD6F00; font-size: 48px; font-weight: bold;">"</span>
+                    Lorem ipsum dolor sit amet consectetur. In enim cursus odio accumsan. Id leo urna velit neque mattis id tellus arcu condimentum. Augue dictum dolor elementum convallis dignissim malesuada commodo ultrices.
+                    <span style="color: #FD6F00; font-size: 48px; font-weight: bold;">"</span>
+                  </div>
+                  <h5 class="mb-1" style="font-size: 24px; font-weight: 600;">Name</h5>
+                  <p class="mb-0" style="font-size: 19px;">CEO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card p-5" style="background-color: #F8F8F8; border: none; border-radius: 14px;">
+              <div class="d-lg-flex align-items-center gap-4">
+                <img src="image/profil.png" alt="Testimonial" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="flex-grow-1">
+                  <div class="mb-3" style="font-size: 18px; line-height: 1.6;">
+                    <span style="color: #FD6F00; font-size: 48px; font-weight: bold;">"</span>
+                    Lorem ipsum dolor sit amet consectetur. In enim cursus odio accumsan. Id leo urna velit neque mattis id tellus arcu condimentum. Augue dictum dolor elementum convallis dignissim malesuada commodo ultrices.
+                    <span style="color: #FD6F00; font-size: 48px; font-weight: bold;">"</span>
+                  </div>
+                  <h5 class="mb-1" style="font-size: 24px; font-weight: 600;">Name</h5>
+                  <p class="mb-0" style="font-size: 19px;">CEO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card p-5" style="background-color: #F8F8F8; border: none; border-radius: 14px;">
+              <div class="d-lg-flex align-items-center gap-4">
+                <img src="image/profil.png" alt="Testimonial" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="flex-grow-1">
+                  <div class="mb-3" style="font-size: 18px; line-height: 1.6;">
+                    <span style="color: #FD6F00; font-size: 48px; font-weight: bold;">"</span>
+                    Lorem ipsum dolor sit amet consectetur. In enim cursus odio accumsan. Id leo urna velit neque mattis id tellus arcu condimentum. Augue dictum dolor elementum convallis dignissim malesuada commodo ultrices.
+                    <span style="color: #FD6F00; font-size: 48px; font-weight: bold;">"</span>
+                  </div>
+                  <h5 class="mb-1" style="font-size: 24px; font-weight: 600;">Name</h5>
+                  <p class="mb-0" style="font-size: 19px;">CEO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="carousel-indicators position-static mt-4">
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="width: 50px; height: 10px; border-radius: 5px;"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2" style="width: 50px; height: 10px; border-radius: 5px;"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3" style="width: 50px; height: 10px; border-radius: 5px;"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" aria-label="Slide 4" style="width: 50px; height: 10px; border-radius: 5px;"></button>
+      </div>
+      <style>
+        .carousel-indicators button {
+          background-color: #828282!important;
+        }
+        .carousel-indicators button.active {
+          background-color: #FD6F00!important;
+        }
+      </style>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Contact CTA Section -->
+<section id="contact" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-2" style="font-size:2rem;">Lets Design Together</h2>
+    <p class="mb-4" style="color:#444;">
+      Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus nulla in. Aliquet donec morbi convallis pretium.
+    </p>
+    <form class="row justify-content-center g-2">
+      <div class="col-md-4">
+        <input type="email" class="form-control form-control-lg" placeholder="Enter Your Email" required>
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-orange btn-lg w-100">Contact Me</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white pt-4 pb-2 mt-5 border-top">
+  <div class="container text-center">
+    <a class="navbar-brand d-inline-flex align-items-center mb-2" href="#">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY7tRPyzAQ3T0wzVWCd0GVxTSfU79du2xz0A&s" alt="Logo" style="height:32px;">
+      <span style="font-weight:bold; color:#ff7a00; margin-left:8px;">Wahyu Web Developer</span>
+    </a>
+    <nav class="mb-2">
+      <a href="#" class="mx-2 text-dark text-decoration-none">Home</a>
+      <a href="#" class="mx-2 text-dark text-decoration-none">About Me</a>
+      <a href="#" class="mx-2 text-dark text-decoration-none">Services</a>
+      <a href="#" class="mx-2 text-dark text-decoration-none">Projects</a>
+      <a href="#" class="mx-2 text-dark text-decoration-none">Testimonials</a>
+      <a href="#" class="mx-2 text-dark text-decoration-none">Contact</a>
+    </nav>
+    <div class="mb-2">
+      <a href="#" class="mx-1 text-dark fs-5"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="mx-1 text-dark fs-5"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="mx-1 text-dark fs-5"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="mx-1 text-dark fs-5"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <div class="text-muted" style="font-size:0.97rem;">
+      © 2025 <span style="color:#ff7a00;">Wahyu Cahyo Vebrianto</span> All Rights Reserved., Inc.
+    </div>
+  </div>
+</footer>
+
+<!-- Custom CSS for orange and badge -->
+<style>
+  .btn-orange {
+    background: #ff7a00;
+    color: #fff;
+    border: none;
+  }
+  .btn-orange:hover {
+    background: #e86d00;
+    color: #fff;
+  }
+  .text-orange {
+    color: #ff7a00 !important;
+  }
+</style>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Tidak ada JavaScript, tab filter pakai HTML+CSS saja -->
+</body>
+</html>
