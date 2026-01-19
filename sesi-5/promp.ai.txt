@@ -1,0 +1,6 @@
+buatkan halaman website ecommerce yang dapat responsive menggunakan Bootstrap css 5.
+buat data produknya menggunakan javascript array yang berisi nama produk, harga, 
+deskripsi singkat, gambar kategori produk. Gunakan looping untuk menampilkan 
+data produk menggunakan komponen bootstrap card. Tambahkan juga fitur filter produk
+berdasarkan kategori produk, dan harga (murah ke mahal, mahal ke murah) serta
+fitur pencarian berdasarkan nama produk.
