@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<?php
+$title = "Create Produk Admin";
+
+ob_start(); // mirip @section('content')
+?>
     <div class="container my-5">
         <div class="row">
             <div class="col-12">
                 <h1>Form Input Data Produk</h1>
-                <form action="proses.php" method="POST"
-                enctype="multipart/form-data">
+                <form action="process/input_process.php" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="nama_produk" class="form-label">Nama Produk</label>
                         <input type="text" class="form-control" id="nama_produk" name="nama_produk" required>
@@ -60,7 +55,8 @@
             alert('All fields are required.');
         }
     }); 
-</script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
+</script>
+<?php
+$content = ob_get_clean(); // simpan konten
+require __DIR__ . '/../../template/main.php';
+?>
