@@ -51,9 +51,11 @@ ob_start(); // mirip @section('content')
                     <td>
                         <a href="edit_page.php?id=<?= $row['id']; ?>" class="btn btn-sm 
                         btn-warning">Edit</a>
-                        <a href="delete_process.php?id=<?= $row['id']; ?>" class="btn btn-sm 
-                        btn-danger" onclick="return confirm('Yakin ingin menghapus produk ini?')
-                        ">Hapus</a>
+                        <a href="process/delete_process.php?id=<?= $row['id'] ?>"
+                        class="btn btn-sm btn-danger"
+                        onclick="return confirm('Yakin ingin menghapus produk ini?')">
+                        Hapus
+                        </a>
                     </td>
                 </tr>
             <?php endwhile; ?>

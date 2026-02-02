@@ -50,7 +50,8 @@ ob_start(); // mirip @section('content')
         <?php if (mysqli_num_rows($query) > 0) : ?>
             <?php while ($row = mysqli_fetch_assoc($query)) : ?>
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow-sm">
+                    <a href="user/product_detail.php?id=<?= htmlspecialchars($row['id']) ?>" 
+                    class="card h-100 shadow-sm">
                         <img src="uploaded_files/<?= 
                             htmlspecialchars($row['image']); ?>" class="card-img-top" style="height:200px; object-fit:cover;">
                         <div class="card-body">
@@ -61,7 +62,7 @@ ob_start(); // mirip @section('content')
                                 Rp <?= number_format($row['harga'], 0, ',', '.'); ?>
                             </h6>
                         </div>
-                    </div>
+                    </a>
                 </div>
             <?php endwhile; ?>
         <?php else : ?>
