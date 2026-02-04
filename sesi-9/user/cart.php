@@ -56,6 +56,10 @@ $cartItems = $_SESSION['cart'] ?? [];
                 </tr>
             </tfoot>
         </table>
+
+        <div class="mt-4">
+            <a href="checkout.php" class="btn btn-success">Lanjut ke Checkout</a>
+        </div>
     <?php endif; ?>
 </div>
 
