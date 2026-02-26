@@ -75,74 +75,74 @@
     </div>                 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-                const ctx = document.getElementById('transactionChart').getContext('2d');
-                const transactionChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: @json($transactionChart['labels']),
-                        datasets: [{
-                            label: 'Transactions',
-                            data: @json($transactionChart['data']),
-                            borderColor: 'rgba(59, 130, 246, 1)',
-                            backgroundColor: 'rgba(59, 130, 246, 0.2)',
-                            fill: true,
-                            tension: 0.4,
-                            yAxisID: 'y'
-                        },
-                        {
-                            label: 'Nominal (Rp)',
-                            data: @json($transactionChart['nominal']),
-                            borderColor: 'rgba(16, 185, 129, 1)',
-                            backgroundColor: 'rgba(16, 185, 129, 0.15)',
-                            fill: true,
-                            tension: 0.4,
-                            yAxisID: 'y1',
-                        }
-                        ]
-                    },
-                     options: {
-                        responsive: true,
-                        plugins: {
-                            legend: {
-                                display: true,
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        if (context.dataset.label === 'Nominal (Rp)') {
-                                            return context.dataset.label + ': Rp' + context.parsed.y.toLocaleString('id-ID');
-                                        }
-                                        return context.dataset.label + ': ' + context.parsed.y;
-                                    }
-                                }
+    const ctx = document.getElementById('transactionChart').getContext('2d');
+    const transactionChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: @json($transactionChart['labels']),
+            datasets: [{
+                label: 'Transactions',
+                data: @json($transactionChart['data']),
+                borderColor: 'rgba(59, 130, 246, 1)',
+                backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                fill: true,
+                tension: 0.4,
+                yAxisID: 'y'
+            },
+            {
+                label: 'Nominal (Rp)',
+                data: @json($transactionChart['nominal']),
+                borderColor: 'rgba(16, 185, 129, 1)',
+                backgroundColor: 'rgba(16, 185, 129, 0.15)',
+                fill: true,
+                tension: 0.4,
+                yAxisID: 'y1',
+            }
+            ]
+        },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                    display: true,
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            if (context.dataset.label === 'Nominal (Rp)') {
+                                return context.dataset.label + ': Rp' + context.parsed.y.toLocaleString('id-ID');
                             }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                title: {
-                                    display: true,
-                                    text: 'Transactions'
-                                }
-                            },
-                            y1: {
-                                beginAtZero: true,
-                                position: 'right',
-                                grid: {
-                                    drawOnChartArea: false,
-                                },
-                                title: {
-                                    display: true,
-                                    text: 'Nominal (Rp)'
-                                },
-                                ticks: {
-                                    callback: function(value) {
-                                        return 'Rp' + value.toLocaleString('id-ID');
-                                    }
-                                }
-                            }
+                            return context.dataset.label + ': ' + context.parsed.y;
                         }
                     }
-                });
+                }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                                text: 'Transactions'
+                        }
+                    },
+                    y1: {
+                        beginAtZero: true,
+                        position: 'right',
+                        grid: {
+                            drawOnChartArea: false,
+                        },
+                        title: {
+                            display: true,
+                            text: 'Nominal (Rp)'
+                        },
+                        ticks: {
+                        callback: function(value) {
+                            return 'Rp' + value.toLocaleString('id-ID');
+                        }
+                    }
+                }
+            }
+        }
+    });
 </script>
 </x-app-layout>
