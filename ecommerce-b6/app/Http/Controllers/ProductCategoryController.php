@@ -33,7 +33,15 @@ class ProductCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $validatedData = $request->validate([
+            'name' => 'required|string|min:5|max:100|unique:product_categories,name',
+            'description' => 'nullable|string',
+        ]);
+
+        ProductCategory::create($validatedData);
+
+        return back()->with('success', 'Kategori produk berhasil ditambahkan.');
+
     }
 
     /**

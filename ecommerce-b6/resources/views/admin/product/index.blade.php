@@ -9,6 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6">
+                    <x-success-error-info />
                     <div class="flex justify-between mb-4">
                         <h3 class="text-lg font-bold">Daftar Produk</h3>
                         <a href="{{ route('products.create') }}" 
@@ -17,7 +18,7 @@
                            + Tambah Produk
                         </a>
                     </div>
-                    <table class="w-full bg-white border" id="myTable">
+                    <table class="w-full bg-white border">
                         <thead>
                             <tr>
                                 <th class="py-2 px-4 border-b">ID</th>
@@ -27,6 +28,7 @@
                                 <th class="py-2 px-4 border-b">Stok</th>
                                 <th class="py-2 px-4 border-b">Gambar</th>
                                 <th class="py-2 px-4 border-b">Kategori</th>
+                                <th class="py-2 px-4 border-b">Total trx</th>
                                 <th class="py-2 px-4 border-b">Aksi</th>
                             </tr>
                         </thead>
@@ -41,7 +43,7 @@
                                     <td class="py-2 px-4 border-b">{{ $product->stock }}</td>
                                     <td class="py-2 px-4 border-b">
                                         @if($product->image_url)
-                                            <img src="{{ asset('images/' . 
+                                            <img src="{{ asset('assets/' . 
                                             $product->image_url) }}" alt="{{ 
                                             $product->name }}" class="w-16 h-16 
                                             object-cover">
@@ -51,6 +53,8 @@
                                     </td>
                                     <td class="py-2 px-4 border-b">{{ 
                                     $product->product_category->name ?? 'Uncategorized' }}</td>
+                                    <td class="py-2 px-4 border-b">{{ 
+                                    $product->transaction_items_count }}</td>
                                     <td class="py-2 px-4 border-b">
                                         <a href="{{ route('products.edit', $product->id) }}" 
                                         class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 
@@ -68,12 +72,13 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4" class="py-2 px-4
-                                    text-center">Tidak ada kategori ditemukan.</td>
+                                    <td class="py-2 px-4 text-center">Tidak ada produk ditemukan.</td>
                                 </tr>
                             @endforelse
                         </tbody>
                     </table>
+
+                    {{ $products->links() }}
                 </div>
             </div>
         </div>

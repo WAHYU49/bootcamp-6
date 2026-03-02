@@ -9,9 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6">
+                    <x-success-error-info />
                     <div class="flex justify-between mb-4">
                         <h3 class="text-lg font-bold">Daftar Kategori Produk</h3>
-                        
                         <!-- Button trigger modal -->
                         <button type="button" onclick="openModal()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">
                             + Tambah Kategori
