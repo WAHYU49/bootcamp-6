@@ -65,7 +65,13 @@ class ProductCategoryController extends Controller
      */
     public function update(Request $request, ProductCategory $productCategory)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|min:5|max:100|unique:product_categories,name,' . $productCategory->id,
+            'description' => 'nullable|string',
+        ]);
+
+        $productCategory->update($validatedData);
+        return back()->with('success', 'Kategori produk dengan id: '.$productCategory->id.' berhasil diperbarui.'); 
     }
 
     /**
@@ -73,6 +79,12 @@ class ProductCategoryController extends Controller
      */
     public function destroy(ProductCategory $productCategory)
     {
-        //
+        if ($productCategory->products()->exists()) {
+            return back()->withErrors(['error', 'Kategori produk: <b>' .$productCategory->name .'</b> tidak dapat dihapus karena masih memiliki produk.']);
+        }
+
+        $productCategory->delete();
+
+        return back()->with('success', 'Kategori produk dengan id: '.$productCategory->id.' berhasil dihapus.');
     }
 }
