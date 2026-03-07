@@ -22,7 +22,7 @@ class DashboardController extends Controller
             ],
             [
                 'name' => 'Product Clicks',
-                'count' => 1323,
+                'count' => Product::sum('click'),
                 'description' => 'Total product clicks',
                 'color'=>'green-500',
                 'icon'=>'web_traffic',
