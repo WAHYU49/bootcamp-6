@@ -8,35 +8,30 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex flex-wrap gap-6 w-full">
-                @foreach ($data as $item)
-                    <div class="p-6 bg-white border-b border-gray-200 max-w-[250px] 
-                    w-full rounded-[12px] shadow-md">
-                        <div class="flex justify-between">
-                            <div>
-                                <h3 class="text-lg font-medium text-gray-900">{{ $item
-                                ['name'] }}</h3>
-                                <p class="mt-2 text-2xl font-bold text-{{ $item['color'] }}">{{ $item['count'] }}</p>
-                            </div>
-                            <span class="material-symbols-rounded text-{{ $item
-                            ['color'] }} !text-3xl">{{ $item['icon'] }}</span>
+                @foreach($summary as $item)
+                <div class="p-6 bg-white border-b border-gray-200 max-w-[250px] w-full rounded-[12px] shadow-md">
+                    <div class="flex justify-between">
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900">{{ $item['name'] }}</h3>
+                            <p class="mt-2 text-2xl font-bold  text-{{ $item['color'] }}">{{ $item['count'] }}</p>
                         </div>
-                        <sub>{{ $item['description'] }}</sub>
+                        <span class="material-symbols-rounded text-{{ $item['color'] }} !text-3xl">{{ $item['icon'] }}</span>
                     </div>
+                    <sub>{{ $item['description'] }}</sub>
+                </div>
                 @endforeach
             </div>
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-
-            [20px] mt-5">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-[20px] mt-5">
                 <h3 class="text-lg font-semibold mb-4">Transactions in Last 7 Days</h3>
-                <canvas id="transactionChart" height="100">
+                <canvas id="transactionsChart" height="100">
                     {{-- Chart will be rendered here --}}
                 </canvas>
             </div>
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-
-            [20px] mt-5">
-                {{-- Lates Transactions --}}
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-[20px] mt-5">
+                {{-- Latest Transactions --}}
                 <div class="flex justify-between gap-2">
                 <h3 class="text-lg font-semibold mb-4">Latest Transactions</h3>
-                <a href="#!" class="text-sm text-blue-600 hover:underline">View All</a>
+                <a href="{{ route('transaction-list') }}" class="text-blue-600 hover:underline mb-4 self-center">View All</a>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200">
@@ -47,23 +42,29 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                            @foreach($latestTransactionOnTable as $transaction)
+                            @foreach($transactionList as $transaction)
                             <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $transaction['id'] }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $transaction['user'] }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp{{ number_format($transaction['amount'], 0, ',', '.') }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ \Carbon\Carbon::parse($transaction['date'])->format('d M Y H:i') }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    <a href="{{ route('checkout.success', ['transaction_id' => $transaction->id]) }}"> {{ $transaction->id }}</a>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $transaction->user->name }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp{{ number_format($transaction->total_amount, 0, ',', '.') }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ \Carbon\Carbon::parse($transaction->created_at)->format('d M Y H:i') }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm">
-                                    @if($transaction['status'] == 'completed')
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Comleted</span>
-                                    @elseif($transaction['status'] == 'pending')
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span>
+                                    @if($transaction->status === 'completed')
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">{{ ucfirst($transaction->status) }}</span>
+                                    @elseif($transaction->status === 'pending')
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">{{ ucfirst($transaction->status) }}</span>
                                     @else
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Failed</span>
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">{{ ucfirst($transaction->status) }}</span>
                                     @endif
+                                </td>
+                                <td>
+                                    <a href="{{ route('checkout.success', ['transaction_id' => $transaction->id]) }}">View Details</a>
                                 </td>
                             </tr>
                             @endforeach
@@ -72,38 +73,39 @@
                 </div>
             </div>
         </div>
-    </div>                 
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    const ctx = document.getElementById('transactionChart').getContext('2d');
-    const transactionChart = new Chart(ctx, {
+    const ctx = document.getElementById('transactionsChart').getContext('2d');
+    const transactionsChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: @json($transactionChart['labels']),
-            datasets: [{
-                label: 'Transactions',
-                data: @json($transactionChart['data']),
-                borderColor: 'rgba(59, 130, 246, 1)',
-                backgroundColor: 'rgba(59, 130, 246, 0.2)',
-                fill: true,
-                tension: 0.4,
-                yAxisID: 'y'
-            },
-            {
-                label: 'Nominal (Rp)',
-                data: @json($transactionChart['nominal']),
-                borderColor: 'rgba(16, 185, 129, 1)',
-                backgroundColor: 'rgba(16, 185, 129, 0.15)',
-                fill: true,
-                tension: 0.4,
-                yAxisID: 'y1',
-            }
+            datasets: [
+                {
+                    label: 'Transactions',
+                    data: @json($transactionChart['data']),
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    fill: true,
+                    tension: 0.4,
+                    yAxisID: 'y',
+                },
+                {
+                    label: 'Nominal (Rp)',
+                    data: @json($transactionChart['nominal']),
+                    borderColor: 'rgba(16, 185, 129, 1)',
+                    backgroundColor: 'rgba(16, 185, 129, 0.15)',
+                    fill: true,
+                    tension: 0.4,
+                    yAxisID: 'y1',
+                }
             ]
         },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
                     display: true,
                 },
                 tooltip: {
@@ -116,26 +118,26 @@
                         }
                     }
                 }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Transactions'
+                    }
                 },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                                text: 'Transactions'
-                        }
+                y1: {
+                    beginAtZero: true,
+                    position: 'right',
+                    grid: {
+                        drawOnChartArea: false,
                     },
-                    y1: {
-                        beginAtZero: true,
-                        position: 'right',
-                        grid: {
-                            drawOnChartArea: false,
-                        },
-                        title: {
-                            display: true,
-                            text: 'Nominal (Rp)'
-                        },
-                        ticks: {
+                    title: {
+                        display: true,
+                        text: 'Nominal (Rp)'
+                    },
+                    ticks: {
                         callback: function(value) {
                             return 'Rp' + value.toLocaleString('id-ID');
                         }

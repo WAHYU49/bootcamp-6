@@ -15,31 +15,23 @@
                         @method('PUT')
                         <div class="mb-4">
                             <label for="name" class="block text-gray-700 font-bold mb-2">Nama Produk</label>
-                            <input type="text" name="name" value="{{ old ('name',$product->name) }}" id="name" class="w-full border rounded px-3 py-2
-                            focus:outline-none focus:ring focus:border-blue-300" required>
+                            <input type="text" name="name" value="{{ old('name', $product->name) }}" id="name" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300" required>
                         </div>
                         <div class="mb-4">
                             <label for="description" class="block text-gray-700 font-bold mb-2">Deskripsi</label>
-                            <textarea name="description" id="description" rows="4" class="w-full border rounded px-3 py-2
-                            focus:outline-none focus:ring focus:border-blue-300" required>{{ 
-                            $product->description }}</textarea>
+                            <textarea name="description" id="description" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300" required>{{ old('description', $product->description) }}</textarea>
                         </div>
                         <div class="mb-4">
                             <label for="price" class="block text-gray-700 font-bold mb-2">Harga</label>
-                            <input type="number" name="price" value="{{ 
-                            $product->price }}" id="price" class="w-full border rounded px-3 py-2
-                            focus:outline-none focus:ring focus:border-blue-300" min="0" required>
+                            <input type="number" name="price" value="{{ old('price', $product->price) }}" id="price" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300" min="0" required>
                         </div>
                         <div class="mb-4">
                             <label for="stock" class="block text-gray-700 font-bold mb-2">Stok</label>
-                            <input type="number" name="stock" value="{{ $product->stock }}"
-                            id="stock" class="w-full border rounded px-3 py-2
-                            focus:outline-none focus:ring focus:border-blue-300" min="0" required>
+                            <input type="number" name="stock" value="{{ old('stock', $product->stock) }}" id="stock" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300" min="0" required>
                         </div>
                         <div class="mb-4">
                             <label for="image" class="block text-gray-700 font-bold mb-2">Gambar Produk</label>
-                            <img src="{{ asset('assets/' . $product->image_url) }}" 
-                            alt="{{ $product->name }}" class="max-w-[200px] object-cover mb-2 rounded">
+                            <img src="{{ asset('assets/' . $product->image_url) }}" alt="{{ $product->name }}" class="max-w-[200px] object-cover mb-2 rounded">
                             <input type="file" id="uploadImage" accept="image/*">
 
                             <div id="croppieContainer" style="width: 100%; max-width: 600px;"></div>
@@ -50,12 +42,11 @@
                         <div id="image-error" class="text-red-500 text-sm mb-4" style="display:none;"></div>
                         <div class="mb-4">
                             <label for="product_category_id" class="block text-gray-700 font-bold mb-2">Kategori Produk</label>
-                            <select name="product_category_id" id="category_id" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300" required>
+                            <select name="product_category_id" id="product_category_id" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300" required>
                                 <option value="">Pilih Kategori</option>
                                 @foreach($categories as $category)
                                     <option value="{{ $category->id }}"
-                                        {{ old('product_category_id', $product->product_category_id) == 
-                                        $category->id ? 'selected' : '' }}
+                                        {{ old('product_category_id', $product->product_category_id) == $category->id ? 'selected' : '' }}
                                         >{{ $category->name }}</option>
                                 @endforeach
                             </select>
@@ -69,6 +60,10 @@
             </div>
         </div>
     </div>
+@push('styles')
+<link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css" />
+<script src="https://unpkg.com/croppie/croppie.js"></script>
+@endpush
 @push('scripts')
 <script>
 let croppie = new Croppie(document.getElementById('croppieContainer'), {

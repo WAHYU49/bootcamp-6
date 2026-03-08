@@ -15,7 +15,10 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        $transactionList = Transaction::with('user')
+                                ->orderBy('created_at', 'desc')
+                                ->paginate(5);
+        return view('admin.transaction_list', compact('transactionList'));
     }
 
     public function checkoutPage()
@@ -25,7 +28,7 @@ class TransactionController extends Controller
         $cart_items = [];
         foreach ($session as $productId => $item) {
             $product = Product::find($productId);
-            if ($product) {
+            if (!$product) {
                 continue;
             }
             $cart_items[] = [
@@ -33,7 +36,7 @@ class TransactionController extends Controller
                 'name' => $product->name,
                 'price' => $product->price,
                 'description' => $product->description,
-                'image_url' => $product->image_url,
+                'image_url' => asset('assets/'.$product->image_url),
                 'quantity' => $item['quantity'],
             ];
         }
@@ -61,14 +64,14 @@ class TransactionController extends Controller
                 'address' => 'required|string|min:10|max:255',
                 'phone' => 'required|string|min:10|max:20',
             ]);
-            
+
             $user = User::find(Auth::id());
             $user->address = $request->address;
             $user->phone = $request->phone;
             $user->save();
 
             $transaction = new Transaction();
-            $transaction->user_id = $user->id();
+            $transaction->user_id = $user->id;
             $transaction->name = $user->name;
             $transaction->address = $request->address;
             $transaction->phone = $request->phone;
@@ -82,7 +85,7 @@ class TransactionController extends Controller
                     continue;
                 }
                 $transaction->transaction_items()->create([
-                    'product_id' => $productId,
+                    'product_id' => $product->id,
                     'quantity' => $item['quantity'],
                     'price' => $product->price,
                 ]);
@@ -96,9 +99,8 @@ class TransactionController extends Controller
 
             // clear cart session
             session()->forget('cart');
-            return redirect()->route('checkout.success', ['transaction_id' => $transaction->id])
-            ->with('success', 'Checkout successful!');
-        }else {
+            return redirect()->route('checkout.success', ['transaction_id'=>$transaction->id])->with('success', 'Checkout successful!');
+        } else {
             return redirect()->route('login')->with('error', 'You must be logged in to checkout.');
         }
     }
@@ -118,6 +120,18 @@ class TransactionController extends Controller
     public function edit(Transaction $transaction)
     {
         //
+    }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $transaction = Transaction::findOrFail($id);
+        $request->validate([
+            'status' => 'required|in:pending,completed,cancelled,shipped,paid',
+        ]);
+        $transaction->status = $request->status;
+        $transaction->save();
+
+        return redirect()->back()->with('success', 'Transaction status updated successfully.');
     }
 
     /**
