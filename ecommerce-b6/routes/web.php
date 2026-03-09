@@ -39,8 +39,7 @@ Route::get('/transaction-status', function () {
 })->name('transaction-status');
 
 Route::get('/contact', function () {
-    return "This is the Contact Page";
-    // return view('welcome');
+    return view('contact');
 })->name('contact');
 
 
